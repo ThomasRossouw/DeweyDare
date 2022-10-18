@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="1000.png" />
+    <None Remove="books.png" />
+    <None Remove="close.png" />
+    <None Remove="Correct.png" />
+    <None Remove="Dewey Decial.png" />
+    <None Remove="Mix.png" />
+    <None Remove="outline_home_white_24dp.png" />
+    <None Remove="TBG %281%29.png" />
+    <None Remove="The art of sorting.png" />
+    <None Remove="wrong.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+    <PackageReference Include="MaterialDesignColors" Version="2.0.7" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1000.png" />
+    <Resource Include="books.png" />
+    <Resource Include="close.png" />
+    <Resource Include="Correct.png" />
+    <Resource Include="Dewey Decial.png" />
+    <Resource Include="Mix.png" />
+    <Resource Include="outline_home_white_24dp.png" />
+    <Resource Include="TBG (1).png" />
+    <Resource Include="The art of sorting.png" />
+    <Resource Include="wrong.png" />
+  </ItemGroup>
+
+</Project>
