@@ -91,7 +91,4 @@ SOFTWARE.
  - [Gunzz](https://www.youtube.com/watch?v=lHxRizc0Riw&ab_channel=Gunzz)
  - [C# Design Pro](https://www.youtube.com/watch?v=8qDCvEgtonc&ab_channel=C%23DesignPro)
  - [Wrong PNG Image](https://www.pngmart.com/image/277705)
- - [Canva](https://www.canva.com/)## Lessons Learned
-
-Trying to do the hardest or easiest way isn't beneficial at all, it is all up to what you can manage and produce your best. 
-Time isn't always on your side, so always have a backup.
+ - [Canva](https://www.canva.com/)
