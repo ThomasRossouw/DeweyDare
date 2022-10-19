@@ -60,7 +60,19 @@ namespace PROG7312_ST10121910
         //pop up to notify the User that the game is coming soon
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Coming Soon", "Exciting");
+            if (MessageBox.Show("Do you want to play the game of Mix and Match?",
+          "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Mix mix = new Mix();
+                this.Visibility = Visibility.Hidden;
+                mix.Show(); // loads the Mix page 
+            }
+            else
+            {
+                MainWindow main = new MainWindow();
+                this.Visibility = Visibility.Hidden;
+                main.Show(); // Reloads the main page 
+            }
         }
 
         //pop up to notify the User that the game is coming soon

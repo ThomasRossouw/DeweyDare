@@ -1,12 +1,61 @@
 ﻿<Window x:Class="PROG7312_ST10121910.Mix"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROG7312_ST10121910"
         mc:Ignorable="d"
-        Title="Mix" Height="450" Width="800">
-    <Grid>
-        
+        Title="Sort" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+
+    <Grid Background="#545454">
+
+        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Source="/TBG (1).png"/>
+
+        <StackPanel Orientation="Horizontal" Height="91" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="122" Margin="848,10,0,0">
+            <Button x:Name="Close"   BorderBrush="#00707070"    RenderTransformOrigin="0.553,0.507" Height="68" Width="75" Click="Close_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="1.268"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="/close.png"/>
+                </Button.Background>
+
+
+            </Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="72" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Width="326">
+            <Button  MinWidth="100" Margin="10,5,0,0" BorderBrush="#00707070" Click="ButtonHome_Click" Width="69" Height="73"  >
+                <Button.Background>
+                    <ImageBrush ImageSource="/outline_home_white_24dp.png"/>
+                </Button.Background>
+
+
+            </Button>
+            <Button x:Name="ButtonBook"  MinWidth="100" Margin="10,5,0,0" BorderBrush="#00707070" Width="32" Height="60" Click="ButtonBook_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/books.png"/>
+                </Button.Background>
+
+
+            </Button>
+            <Button x:Name="ButtonMix"  MinWidth="100" Margin="10,5,0,0" BorderBrush="#00707070" Width="32" Height="60" Click="ButtonMix_Click"  >
+                <Button.Background>
+                    <ImageBrush ImageSource="/match.png"/>
+                </Button.Background>
+
+
+            </Button>
+
+        </StackPanel>
+
+
+
+        <Image x:Name="OMG" HorizontalAlignment="Left" Height="100" Margin="857,329,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

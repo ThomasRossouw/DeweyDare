@@ -29,7 +29,7 @@
             </Button>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Height="72" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Width="234">
+        <StackPanel Orientation="Horizontal" Height="72" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Width="336">
             <Button  MinWidth="100" Margin="10,5,0,0" BorderBrush="#00707070" Click="ButtonHome_Click" Width="69" Height="73"  >
                 <Button.Background>
                     <ImageBrush ImageSource="/outline_home_white_24dp.png"/>
@@ -37,9 +37,16 @@
 
 
             </Button>
-            <Button  MinWidth="100" Margin="10,5,0,0" BorderBrush="#00707070" Width="32" Height="60" >
+            <Button x:Name="ButtonBook"  MinWidth="100" Margin="10,5,0,0" BorderBrush="#00707070" Width="32" Height="60" Click="ButtonBook_Click" >
                 <Button.Background>
                     <ImageBrush ImageSource="/books.png"/>
+                </Button.Background>
+
+
+            </Button>
+            <Button x:Name="ButtonMix"  MinWidth="100" Margin="10,5,0,0" BorderBrush="#00707070" Width="32" Height="60" Click="ButtonMix_Click"  >
+                <Button.Background>
+                    <ImageBrush ImageSource="/match.png"/>
                 </Button.Background>
 
 

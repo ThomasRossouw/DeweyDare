@@ -224,5 +224,21 @@ namespace PROG7312_ST10121910
             this.Visibility = Visibility.Hidden;
             sort.Show();
         }
+
+        // The action to change to the Sorting Game
+        private void ButtonBook_Click(object sender, RoutedEventArgs e)
+        {
+            Sort sort = new Sort();
+            this.Visibility = Visibility.Hidden;
+            sort.Show();
+        }
+
+        // The action to change to the Mix and Match Game
+        private void ButtonMix_Click(object sender, RoutedEventArgs e)
+        {
+            Mix mix = new Mix();
+            this.Visibility = Visibility.Hidden;
+            mix.Show();
+        }
     }
 }
