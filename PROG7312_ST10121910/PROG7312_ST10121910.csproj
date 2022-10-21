@@ -13,11 +13,13 @@
     <None Remove="close.png" />
     <None Remove="Correct.png" />
     <None Remove="Dewey Decial.png" />
+    <None Remove="down.png" />
     <None Remove="match.png" />
     <None Remove="Mix.png" />
     <None Remove="outline_home_white_24dp.png" />
     <None Remove="TBG %281%29.png" />
     <None Remove="The art of sorting.png" />
+    <None Remove="up.png" />
     <None Remove="wrong.png" />
   </ItemGroup>
 
@@ -33,11 +35,13 @@
     <Resource Include="close.png" />
     <Resource Include="Correct.png" />
     <Resource Include="Dewey Decial.png" />
+    <Resource Include="down.png" />
     <Resource Include="match.png" />
     <Resource Include="Mix.png" />
     <Resource Include="outline_home_white_24dp.png" />
     <Resource Include="TBG (1).png" />
     <Resource Include="The art of sorting.png" />
+    <Resource Include="up.png" />
     <Resource Include="wrong.png" />
   </ItemGroup>
 

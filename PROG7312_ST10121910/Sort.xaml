@@ -53,11 +53,18 @@
             </Button>
 
         </StackPanel>
+        <Button x:Name="UpButton"  MinWidth="100" Margin="673,140,227,384" BorderBrush="#00707070" Width="32" Height="60"  Click="Button_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="/up.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="DownButton"  MinWidth="100" Margin="673,246,227,278" BorderBrush="#00707070" Width="32" Height="60" Click="Button_Click_1" >
+            <Button.Background>
+                <ImageBrush ImageSource="/down.png"/>
+            </Button.Background>
+        </Button>
 
-
-        <ListBox x:Name="lstBox1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="280,113,322,39" SelectionChanged="lstBox1_SelectionChanged"/>
-        <Button Content="Up" HorizontalAlignment="Left" Margin="692,168,0,0" VerticalAlignment="Top" Click="Button_Click" Background="#FF3AB789"/>
-        <Button Content="Down" HorizontalAlignment="Left" Margin="810,260,0,0" VerticalAlignment="Top" Click="Button_Click_1" Background="#FFB73A3A"/>
+        <ListBox x:Name="lstBox1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="270,113,332,39" SelectionChanged="lstBox1_SelectionChanged"/>
         <Button Content="Submit" HorizontalAlignment="Left" Margin="682,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2" Background="#FF198AB8">
             <Button.RenderTransform>
                 <TransformGroup>
