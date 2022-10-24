@@ -53,19 +53,30 @@
             </Button>
 
         </StackPanel>
-        <Button x:Name="UpButton"  MinWidth="100" Margin="673,140,227,384" BorderBrush="#00707070" Width="32" Height="60"  Click="Button_Click" >
-            <Button.Background>
-                <ImageBrush ImageSource="/up.png"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="DownButton"  MinWidth="100" Margin="673,246,227,278" BorderBrush="#00707070" Width="32" Height="60" Click="Button_Click_1" >
-            <Button.Background>
-                <ImageBrush ImageSource="/down.png"/>
-            </Button.Background>
-        </Button>
+        <StackPanel Margin="604,132,60,279">
+            <Button x:Name="UpButton"   MinWidth="100" Width="32" Height="80" Click="Button_Click" BorderBrush="{x:Null}" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/up.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="DownButton"   MinWidth="100" Width="32" Height="80" Click="Button_Click_1" BorderBrush="{x:Null}" >
+
+                <Button.Background>
+                    <ImageBrush ImageSource="/down.png"/>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
 
         <ListBox x:Name="lstBox1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="270,113,332,39" SelectionChanged="lstBox1_SelectionChanged"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="682,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2" Background="#FF198AB8">
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="734,369,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2" Background="#FF198AB8">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF60D0D" Offset="0.694"/>
+                    <GradientStop Color="White" Offset="0.939"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -77,5 +88,7 @@
         </Button>
         <Image x:Name="OMG" HorizontalAlignment="Left" Height="100" Margin="857,329,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="Reset" Content="Reset" HorizontalAlignment="Left" Margin="67,205,0,0" VerticalAlignment="Top" Background="#FF55B73A" Click="Reset_Click"/>
+        <Label x:Name="LblSort" Content="How to play the Sorting Game: &#xD;&#xA;&#xD;&#xA;In order to be up to the Dewey &#xD;&#xA;Standards, you need to put the &#xD;&#xA;numbers in the correct order as&#xD;&#xA;per the Dewey Decimal System.&#xD;&#xA;&#xD;&#xA;Use the arrow to move your &#xD;&#xA;selected number up or down.&#xD;&#xA;&#xD;&#xA;Once you are happy ensure &#xD;&#xA;that you press the submit button&#xD;&#xA;and allow the game to display &#xD;&#xA;your badge and pop up message." HorizontalAlignment="Left" Margin="10,261,0,0" VerticalAlignment="Top" Height="284" Width="220" Foreground="#DDFFFFFF" FontSize="14"/>
+        <ProgressBar x:Name="BarSort" Minimum="0" Maximum="10" HorizontalAlignment="Left" Height="20" Margin="720,449,0,0" VerticalAlignment="Top" Width="250"/>
     </Grid>
 </Window>

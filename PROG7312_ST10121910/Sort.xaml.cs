@@ -154,9 +154,6 @@ namespace PROG7312_ST10121910
             var sortedDict = from entry in cd orderby entry.Key ascending select entry;
 
             var list = sortedDict.ToList<KeyValuePair<double, string>>();
-            //list.Sort((x, y) => x.Value.Length.CompareTo(y.Value.Length));
-
-            //list = list.OrderBy(x => x.Value.Length).ToList();
 
             var list2 = cd1.ToList<KeyValuePair<double, string>>();
 
@@ -189,15 +186,25 @@ namespace PROG7312_ST10121910
             bool isEqual = Enumerable.SequenceEqual(list, list2);
             if (isEqual)
             {
-                OMG.Source = new BitmapImage(new Uri("/1000.png", UriKind.Relative));
                 MessageBox.Show("You got it!", "Congratulations you are correct!");
+                BarSort.Value = 100;
+                OMG.Source = new BitmapImage(new Uri("/1000.png", UriKind.Relative));
+               
 
             }
             //pop up to notify the User that they are wrong
             else
             {
-                OMG.Source = new BitmapImage(new Uri("/wrong.png", UriKind.Relative));
                 MessageBox.Show("These aren't up to the Dewey standards", "Unforuntely!");
+                var test = list.All(list2.Contains) && list.Count == list.Count;
+                int check = test ? 1 : 0;
+                BarSort.Value = 5;
+                BarSort.Value = 4;
+                BarSort.Value = 3;
+                BarSort.Value = 2;
+                BarSort.Value = 1;
+               
+                OMG.Source = new BitmapImage(new Uri("/wrong.png", UriKind.Relative));
 
             }
         }
