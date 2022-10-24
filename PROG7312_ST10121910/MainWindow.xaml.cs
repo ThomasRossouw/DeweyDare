@@ -88,5 +88,14 @@ namespace PROG7312_ST10121910
 
             this.Close(); // closes the program for the user 
         }
+
+       
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Help help = new Help();
+            this.Visibility = Visibility.Hidden;
+            help.Show();
+        }
     }
 }

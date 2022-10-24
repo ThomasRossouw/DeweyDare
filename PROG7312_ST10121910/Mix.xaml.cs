@@ -36,6 +36,8 @@ namespace PROG7312_ST10121910
             MatchBtn5.Visibility = Visibility.Hidden;
             MatchBtn6.Visibility = Visibility.Hidden;
             MatchBtn7.Visibility = Visibility.Hidden;
+
+            SelectionLbl.Visibility = Visibility.Hidden;
         }
 
         string selected1;
@@ -59,11 +61,95 @@ namespace PROG7312_ST10121910
         int final6;
 
 
-
+        //Dictionary
+       // IDictionary<string, string> callNumbers = new Dictionary<string, string>();
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            ////clearing items when selecting play
+            //NumberView.Items.Clear();
+            //NameView.Items.Clear();
+
+            ////new instance of the DeweyDictionary class
+            //Dictionary dew = new Dictionary();
+
+            ////dictionary to store questions
+            //Dictionary<string, string> questions = new Dictionary<string, string>();
+
+            ////variables
+            //Random rand = new Random(); // Creating a variable using the Random class
+
+            //int AvalCateg = dew.deweyCategories.Count;
+            //int totalQuestions = 7;
+            //int number = 0;
+            //int diff = AvalCateg - totalQuestions;
+
+            ////new function to shuffle through the strings and values stored in DeweyDictionary class (Dictionary)
+            ////store the values in a new dictionary
+            //Dictionary<string, string> shuffle = dew.deweyCategories.OrderBy(
+            //x => rand.Next()).ToDictionary(item => item.Key, item => item.Value);
+
+            ////using the shuffle function to add the 4 randomized strings to the question side
+            //for (int i = 0; i < shuffle.Count - diff; i++)
+            //{
+            //    questions.Add(shuffle.ElementAt(i).Key, shuffle.ElementAt(i).Value);
+            //}
+
+            ////switching the values with a list
+            //List<int> randNumberList = new List<int>();
+            //int randNumber;
+
+            ////for statement to check no duplicated question are added
+            //for (int i = 0; i < questions.Count; i++)
+            //{
+            //    do
+            //    {
+            //        randNumber = rand.Next(questions.Count);
+            //    }
+            //    while (randNumberList.Contains(randNumber));
+            //    randNumberList.Add(randNumber);
+            //}
+
+            ////interate over 
+            //for (int i = 0; i < questions.Count; i++)
+            //{
+            //    for (int j = i; j < randNumberList.Count;)
+            //    {
+            //        // only 4 numbers are added to listView
+            //        if (number++ <= 3)
+            //        {
+            //            //random numbers to listView
+            //            NumberView.Items.Add(questions.ElementAt(i).Key.ToString());
+            //        }
+
+            //        //random descriptions to listView
+            //        NameView.Items.Add(questions.ElementAt(j).Value.ToString());
+
+            //        break;
+            //    }
+            //}
+
+            ////list to store the call numbers
+            //var callNumbers = new List<string>();
+
+            ////assisting the selected call numbers to list
+            //foreach (ListViewItem s in NumberView.Items)
+            //{
+            //    //addding call numbers to the list
+            //    callNumbers.Add(s.Text);
+            //}
+
+            ////ordering
+            //callNumbers = callNumbers.OrderBy(x => Guid.NewGuid()).ToList();
+
+            ////clearning numbers 
+            //NumberView.Items.Clear();
+
+            //foreach (var item in callNumbers)
+            //{
+            //    NumberView.Items.Add(item);
+            //}
 
 
             string[] callNumbers = { "000 - General Knowledge",
@@ -88,37 +174,37 @@ namespace PROG7312_ST10121910
 
 
 
-            Random rand = new Random();
+            Random random = new Random();
 
-            int index1 = rand.Next(callNumbers.Length);
+            int index1 = random.Next(callNumbers.Length);
             string opt1 = callNumbers[index1];
             string opti1 = callNumbers[index1];
             List<string> list = new List<string>(callNumbers);
             list.RemoveAt(list.IndexOf(opt1));
             callNumbers = list.ToArray();
 
-            int index2 = rand.Next(callNumbers.Length);
+            int index2 = random.Next(callNumbers.Length);
             string opt2 = callNumbers[index2];
             string opti2 = callNumbers[index2];
             List<string> list1 = new List<string>(callNumbers);
             list1.RemoveAt(list1.IndexOf(opt2));
             callNumbers = list1.ToArray();
 
-            int index3 = rand.Next(callNumbers.Length);
+            int index3 = random.Next(callNumbers.Length);
             string opt3 = callNumbers[index3];
             string opti3 = callNumbers[index3];
             List<string> list2 = new List<string>(callNumbers);
             list2.RemoveAt(list2.IndexOf(opt3));
             callNumbers = list2.ToArray();
 
-            int index4 = rand.Next(callNumbers.Length);
+            int index4 = random.Next(callNumbers.Length);
             string opt4 = callNumbers[index4];
             string opti4 = callNumbers[index4];
             List<string> list3 = new List<string>(callNumbers);
             list3.RemoveAt(list3.IndexOf(opt4));
             callNumbers = list3.ToArray();
 
-            int index5 = rand.Next(callNumbers.Length);
+            int index5 = random.Next(callNumbers.Length);
             string opt5 = callNumbers[index5];
             string opti5 = callNumbers[index5];
             List<string> list4 = new List<string>(callNumbers);
@@ -126,7 +212,7 @@ namespace PROG7312_ST10121910
             callNumbers = list4.ToArray();
 
 
-            int index6 = rand.Next(callNumbers.Length);
+            int index6 = random.Next(callNumbers.Length);
             string opt6 = callNumbers[index6];
             string opti6 = callNumbers[index6];
             List<string> list5 = new List<string>(callNumbers);
@@ -134,7 +220,7 @@ namespace PROG7312_ST10121910
             callNumbers = list5.ToArray();
 
 
-            int index7 = rand.Next(callNumbers.Length);
+            int index7 = random.Next(callNumbers.Length);
             string opt7 = callNumbers[index7];
             string opti7 = callNumbers[index7];
 
@@ -164,26 +250,26 @@ namespace PROG7312_ST10121910
             string[] leftSide = { res1, res2, res3, res4, res5, res6, res7 };
             string[] rightSide = { mis1, mis2, mis3, mis4, mis5, mis6, mis7 };
 
-            int pick1 = rand.Next(leftSide.Length);
+            int pick1 = random.Next(leftSide.Length);
             string cho1 = leftSide[pick1];
             List<string> listOptions = new List<string>(leftSide);
             listOptions.RemoveAt(listOptions.IndexOf(cho1));
             leftSide = listOptions.ToArray();
 
-            int pick2 = rand.Next(leftSide.Length);
+            int pick2 = random.Next(leftSide.Length);
             string cho2 = leftSide[pick2];
             List<string> listOptions1 = new List<string>(leftSide);
             listOptions1.RemoveAt(listOptions1.IndexOf(cho2));
             leftSide = listOptions1.ToArray();
 
 
-            int pick3 = rand.Next(leftSide.Length);
+            int pick3 = random.Next(leftSide.Length);
             string cho3 = leftSide[pick3];
             List<string> listOptions2 = new List<string>(leftSide);
             listOptions2.RemoveAt(listOptions2.IndexOf(cho3));
             leftSide = listOptions2.ToArray();
 
-            int pick4 = rand.Next(leftSide.Length);
+            int pick4 = random.Next(leftSide.Length);
             string cho4 = leftSide[pick4];
             List<string> listOptions3 = new List<string>(leftSide);
             listOptions3.RemoveAt(listOptions3.IndexOf(cho4));
@@ -195,43 +281,43 @@ namespace PROG7312_ST10121910
             PosOptbtn4.Content = cho4;
 
 
-            int ans1 = rand.Next(rightSide.Length);
+            int ans1 = random.Next(rightSide.Length);
             string answer1 = rightSide[ans1];
             List<string> listAnswers = new List<string>(rightSide);
             listAnswers.RemoveAt(listAnswers.IndexOf(answer1));
             rightSide = listAnswers.ToArray();
 
-            int ans2 = rand.Next(rightSide.Length);
+            int ans2 = random.Next(rightSide.Length);
             string answer2 = rightSide[ans2];
             List<string> listAnswers1 = new List<string>(rightSide);
             listAnswers1.RemoveAt(listAnswers1.IndexOf(answer2));
             rightSide = listAnswers1.ToArray();
 
-            int ans3 = rand.Next(rightSide.Length);
+            int ans3 = random.Next(rightSide.Length);
             string answer3 = rightSide[ans3];
             List<string> listAnswers2 = new List<string>(rightSide);
             listAnswers2.RemoveAt(listAnswers2.IndexOf(answer3));
             rightSide = listAnswers2.ToArray();
 
-            int ans4 = rand.Next(rightSide.Length);
+            int ans4 = random.Next(rightSide.Length);
             string answer4 = rightSide[ans4];
             List<string> listAnswers3 = new List<string>(rightSide);
             listAnswers3.RemoveAt(listAnswers3.IndexOf(answer4));
             rightSide = listAnswers3.ToArray();
 
-            int ans5 = rand.Next(rightSide.Length);
+            int ans5 = random.Next(rightSide.Length);
             string answer5 = rightSide[ans5];
             List<string> listAnswers4 = new List<string>(rightSide);
             listAnswers4.RemoveAt(listAnswers4.IndexOf(answer5));
             rightSide = listAnswers4.ToArray();
 
-            int ans6 = rand.Next(rightSide.Length);
+            int ans6 = random.Next(rightSide.Length);
             string answer6 = rightSide[ans6];
             List<string> listAnswers5 = new List<string>(rightSide);
             listAnswers5.RemoveAt(listAnswers5.IndexOf(answer6));
             rightSide = listAnswers5.ToArray();
 
-            int ans7 = rand.Next(rightSide.Length);
+            int ans7 = random.Next(rightSide.Length);
             string answer7 = rightSide[ans7];
             List<string> listAnswers6 = new List<string>(rightSide);
             listAnswers6.RemoveAt(listAnswers6.IndexOf(answer7));
@@ -269,195 +355,195 @@ namespace PROG7312_ST10121910
         {
             var btn1 = (e.Source as Button).Content.ToString();
             selected1 = btn1;
-            tbTest.Text = selected1;
+            SelectionLbl.Text = selected1;
         }
 
         private void btnOption2_Click(object sender, RoutedEventArgs e)
         {
             var btn1 = (e.Source as Button).Content.ToString();
             selected1 = btn1;
-            tbTest.Text = selected1;
+            SelectionLbl.Text = selected1;
         }
 
         private void btnOption3_Click(object sender, RoutedEventArgs e)
         {
             var btn1 = (e.Source as Button).Content.ToString();
             selected1 = btn1;
-            tbTest.Text = selected1;
+            SelectionLbl.Text = selected1;
         }
 
         private void btnOption4_Click(object sender, RoutedEventArgs e)
         {
             var btn1 = (e.Source as Button).Content.ToString();
             selected1 = btn1;
-            tbTest.Text = selected1;
+            SelectionLbl.Text = selected1;
         }
 
         private void MatchBtn1_Click(object sender, RoutedEventArgs e)
         {
-            if (tbTest.Text != "")
+            if (SelectionLbl.Text != "")
             {
 
                 var btn1 = (e.Source as Button).Content.ToString();
                 string a1 = btn1;
-                string b2 = tbTest.Text + btn1;
+                string b2 = SelectionLbl.Text + btn1;
                 MatchBtn1.Content = b2;
 
                 MatchBtn1.IsEnabled = false;
 
                 answered1 = b2;
 
-                tbTest.Text = "";
+                SelectionLbl.Text = "";
             }
 
             else
             {
-                MessageBox.Show("please select a code first");
+                MessageBox.Show("Please select a number on the left first.", "Alert");
             }
         }
 
         private void MatchBtn2_Click(object sender, RoutedEventArgs e)
         {
-            if (tbTest.Text != "")
+            if (SelectionLbl.Text != "")
             {
 
 
                 var btn1 = (e.Source as Button).Content.ToString();
                 string a1 = btn1;
-                string b2 = tbTest.Text + btn1;
+                string b2 = SelectionLbl.Text + btn1;
                 MatchBtn2.Content = b2;
 
                 MatchBtn2.IsEnabled = false;
 
                 answered2 = b2;
 
-                tbTest.Text = "";
+                SelectionLbl.Text = "";
             }
 
             else
             {
-                MessageBox.Show("please select a code first");
+                MessageBox.Show("Please select a number on the left first.", "Alert");
             }
         }
 
         private void MatchBtn3_Click(object sender, RoutedEventArgs e)
         {
 
-            if (tbTest.Text != "")
+            if (SelectionLbl.Text != "")
             {
 
                 var btn1 = (e.Source as Button).Content.ToString();
                 string a1 = btn1;
-                string b2 = tbTest.Text + btn1;
+                string b2 = SelectionLbl.Text + btn1;
                 MatchBtn3.Content = b2;
 
                 MatchBtn3.IsEnabled = false;
 
                 answered3 = b2;
 
-                tbTest.Text = "";
+                SelectionLbl.Text = "";
 
             }
 
             else
             {
-                MessageBox.Show("please select a code first");
+                MessageBox.Show("Please select a number on the left first.", "Alert");
             }
         }
 
         private void MatchBtn4_Click(object sender, RoutedEventArgs e)
         {
-            if (tbTest.Text != "")
+            if (SelectionLbl.Text != "")
             {
 
                 var btn1 = (e.Source as Button).Content.ToString();
                 string a1 = btn1;
-                string b2 = tbTest.Text + btn1;
+                string b2 = SelectionLbl.Text + btn1;
                 MatchBtn4.Content = b2;
 
                 MatchBtn4.IsEnabled = false;
 
                 answered4 = b2;
 
-                tbTest.Text = "";
+                SelectionLbl.Text = "";
 
             }
 
             else
             {
-                MessageBox.Show("please select a code first");
+                MessageBox.Show("Please select a number on the left first.", "Alert");
             }
         }
 
         private void MatchBtn5_Click(object sender, RoutedEventArgs e)
         {
-            if (tbTest.Text != "")
+            if (SelectionLbl.Text != "")
             {
 
                 var btn1 = (e.Source as Button).Content.ToString();
                 string a1 = btn1;
-                string b2 = tbTest.Text + btn1;
+                string b2 = SelectionLbl.Text + btn1;
                 MatchBtn5.Content = b2;
 
                 MatchBtn5.IsEnabled = false;
 
                 answered5 = b2;
 
-                tbTest.Text = "";
+                SelectionLbl.Text = "";
 
             }
 
             else
             {
-                MessageBox.Show("please select a code first");
+                MessageBox.Show("Please select a number on the left first.", "Alert");
             }
         }
 
         private void MatchBtn6_Click(object sender, RoutedEventArgs e)
         {
-            if (tbTest.Text != "")
+            if (SelectionLbl.Text != "")
             {
 
                 var btn1 = (e.Source as Button).Content.ToString();
                 string a1 = btn1;
-                string b2 = tbTest.Text + btn1;
+                string b2 = SelectionLbl.Text + btn1;
                 MatchBtn6.Content = b2;
 
                 MatchBtn6.IsEnabled = false;
 
                 answered6 = b2;
 
-                tbTest.Text = "";
+                SelectionLbl.Text = "";
 
             }
 
             else
             {
-                MessageBox.Show("please select a code first");
+                MessageBox.Show("Please select a number on the left first.", "Alert");
             }
         }
 
         private void MatchBtn7_Click(object sender, RoutedEventArgs e)
         {
-            if (tbTest.Text != "")
+            if (SelectionLbl.Text != "")
             {
 
                 var btn1 = (e.Source as Button).Content.ToString();
                 string a1 = btn1;
-                string b2 = tbTest.Text + btn1;
+                string b2 = SelectionLbl.Text + btn1;
                 MatchBtn7.Content = b2;
 
                 MatchBtn7.IsEnabled = false;
 
                 answered7 = b2;
 
-                tbTest.Text = "";
+                SelectionLbl.Text = "";
 
             }
 
             else
             {
-                MessageBox.Show("please select a code first");
+                MessageBox.Show("Please select a number on the left first.", "Alert");
             }
         }
 
@@ -550,10 +636,40 @@ namespace PROG7312_ST10121910
             int total = final0 + final1 + final2 + final3 + final4 + final5 + final6;
 
 
-            MessageBox.Show(total.ToString());
+            MessageBox.Show(total.ToString(), "Result");
 
+            if(total == 4)
+            {
+                MessageBox.Show("You got it!", "Congratulations you are correct!");
+                BarSort.Value = 100;
+                Dude.Source = new BitmapImage(new Uri("/1000.png", UriKind.Relative));
 
+            }
+            if(total == 3)
+            {
+                MessageBox.Show("You almost there!", "Getting there ...");
+                BarSort.Value = 75;
+                Dude.Source = new BitmapImage(new Uri("/Almost.png", UriKind.Relative));
+            }
+            if(total == 2)
+            {
+                MessageBox.Show("Keep going, you are halfway:)", "Halfway");
+                BarSort.Value = 50;
+                Dude.Source = new BitmapImage(new Uri("/halfway.png", UriKind.Relative));
+            }
+            if(total == 1)
+            {
+                MessageBox.Show("You are a quater of the way;)", "Slowly getting there ;)");
+                BarSort.Value = 25;
+                Dude.Source = new BitmapImage(new Uri("/25.png", UriKind.Relative));
+            }
+            if (total == 0)
+            {
+                MessageBox.Show("You are not up to the Dewey Standards!", "Unfortunately");
+                BarSort.Value = 0;
+                Dude.Source = new BitmapImage(new Uri("/wrong.png", UriKind.Relative));
 
+            }
         }
     
 
