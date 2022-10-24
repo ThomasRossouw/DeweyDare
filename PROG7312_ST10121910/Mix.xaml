@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PROG7312_ST10121910"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="PROG7312_ST10121910.Mix"
         mc:Ignorable="d"
-        Title="Sort" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="Mix and Match" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
 
     <Grid Background="#545454">
 
@@ -59,21 +59,21 @@
 
         <Image x:Name="OMG" HorizontalAlignment="Left" Height="100" Margin="857,329,0,0" VerticalAlignment="Top" Width="100"/>
 
-        <Border BorderBrush="Black" BorderThickness="2" Margin="262,135,436,62"/>
-        <Border BorderBrush="Black" BorderThickness="2" Margin="559,135,10,64">
-            <Button x:Name="MatchBtn6" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="88,272,0,0" Click="MatchBtn6_Click" Background="#FF06E9FF" Foreground="Black"/>
+        <Border BorderBrush="Black" BorderThickness="2" Margin="262,100,436,82"/>
+        <Border BorderBrush="Black" BorderThickness="2" Margin="559,100,10,82">
+            <Button x:Name="MatchBtn6" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="187,282,0,0" Click="MatchBtn6_Click" Background="#FF06E9FF" Foreground="Black"/>
         </Border>
-        <Button x:Name="PosOptbtn1" Content="{Binding}" HorizontalAlignment="Left" Margin="385,203,0,0" VerticalAlignment="Top" Click="btnOption1_Click" Background="#FF62B73A"/>
-        <Button x:Name="PosOptbtn2" Content="{Binding}" HorizontalAlignment="Left" Margin="385,275,0,0" VerticalAlignment="Top" Click="btnOption2_Click" Background="#FF3A9CB7"/>
-        <Button x:Name="PosOptbtn3" Content="{Binding}" HorizontalAlignment="Left" Margin="385,343,0,0" VerticalAlignment="Top" Click="btnOption3_Click" Background="#FFB79E3A"/>
-        <Button x:Name="PosOptbtn4" Content="{Binding}" HorizontalAlignment="Left" Margin="385,416,0,0" VerticalAlignment="Top" Click="btnOption4_Click" Background="#FFAF3AB7"/>
-        <Button x:Name="MatchBtn1" Content="" HorizontalAlignment="Left" Margin="651,148,0,0" VerticalAlignment="Top" Click="MatchBtn1_Click" Background="#FF06E9FF" Foreground="Black"/>
-        <Button x:Name="MatchBtn2" Content="" HorizontalAlignment="Left" Margin="651,203,0,0" VerticalAlignment="Top" Click="MatchBtn2_Click" Background="#FF06E9FF" Foreground="Black"/>
-        <Button x:Name="MatchBtn3" Content="" HorizontalAlignment="Left" Margin="651,259,0,0" VerticalAlignment="Top" Click="MatchBtn3_Click" Background="#FF06E9FF" Foreground="Black"/>
-        <Button x:Name="MatchBtn4" Content="" HorizontalAlignment="Left" Margin="651,307,0,0" VerticalAlignment="Top" Click="MatchBtn4_Click" Background="#FF06E9FF" Foreground="Black"/>
-        <Button x:Name="MatchBtn5" Content="" HorizontalAlignment="Left" Margin="651,359,0,0" VerticalAlignment="Top" Click="MatchBtn5_Click" Background="#FF06E9FF" Foreground="Black"/>
-        <Button x:Name="MatchBtn7" Content="" HorizontalAlignment="Left" Margin="649,459,0,0" VerticalAlignment="Top" Click="MatchBtn7_Click" Background="#FF06E9FF" Foreground="Black"/>
-        <Button Content="Start Game" HorizontalAlignment="Left" Margin="58,197,0,0" VerticalAlignment="Top" Click="Button_Click">
+        <Button x:Name="PosOptbtn1" Content="{Binding}" HorizontalAlignment="Left" Margin="300,149,0,0" VerticalAlignment="Top" Click="btnOption1_Click" Background="#FF62B73A"/>
+        <Button x:Name="PosOptbtn2" Content="{Binding}" HorizontalAlignment="Left" Margin="300,228,0,0" VerticalAlignment="Top" Click="btnOption2_Click" Background="#FF3A9CB7"/>
+        <Button x:Name="PosOptbtn3" Content="{Binding}" HorizontalAlignment="Left" Margin="300,305,0,0" VerticalAlignment="Top" Click="btnOption3_Click" Background="#FFB79E3A"/>
+        <Button x:Name="PosOptbtn4" Content="{Binding}" HorizontalAlignment="Left" Margin="300,388,0,0" VerticalAlignment="Top" Click="btnOption4_Click" Background="#FFAF3AB7"/>
+        <Button x:Name="MatchBtn1" Content="" HorizontalAlignment="Left" Margin="748,112,0,0" VerticalAlignment="Top" Click="MatchBtn1_Click" Background="#FF06E9FF" Foreground="Black"/>
+        <Button x:Name="MatchBtn2" Content="" HorizontalAlignment="Left" Margin="748,163,0,0" VerticalAlignment="Top" Click="MatchBtn2_Click" Background="#FF06E9FF" Foreground="Black"/>
+        <Button x:Name="MatchBtn3" Content="" HorizontalAlignment="Left" Margin="748,218,0,0" VerticalAlignment="Top" Click="MatchBtn3_Click" Background="#FF06E9FF" Foreground="Black"/>
+        <Button x:Name="MatchBtn4" Content="" HorizontalAlignment="Left" Margin="748,274,0,0" VerticalAlignment="Top" Click="MatchBtn4_Click" Background="#FF06E9FF" Foreground="Black"/>
+        <Button x:Name="MatchBtn5" Content="" HorizontalAlignment="Left" Margin="748,330,0,0" VerticalAlignment="Top" Click="MatchBtn5_Click" Background="#FF06E9FF" Foreground="Black"/>
+        <Button x:Name="MatchBtn7" Content="" HorizontalAlignment="Left" Margin="748,436,0,0" VerticalAlignment="Top" Click="MatchBtn7_Click" Background="#FF06E9FF" Foreground="Black"/>
+        <Button Content="Start Game with Number Match" HorizontalAlignment="Left" Margin="12,167,0,0" VerticalAlignment="Top" Click="StartGame_Click">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -87,8 +87,18 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="tbTest" HorizontalAlignment="Left" Margin="357,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button x:Name="SubmitBtn" Content="Submit" HorizontalAlignment="Left" Margin="525,527,0,0" VerticalAlignment="Top" Background="#FF198AB8" Click="SubmitBtn_Click">
+        <TextBlock x:Name="SelectionLbl" HorizontalAlignment="Left" Margin="569,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="33" Background="White"/>
+
+        <Button x:Name="SubmitBtn" Content="Submit" HorizontalAlignment="Left" Margin="525,526,0,0" VerticalAlignment="Top" Background="#FF198AB8" Click="SubmitBtn_Click">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF60D0D" Offset="0.694"/>
+                    <GradientStop Color="White" Offset="0.939"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+
+        </Button>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="650,526,0,0" VerticalAlignment="Top" Background="#FF198AB8" Click="BtnSubmit_Click">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF60D0D" Offset="0.694"/>
@@ -98,5 +108,22 @@
 
         </Button>
         <Label Content="How to play the game of Mix and Match: &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Press the button &quot;Start Game&quot; to make &#xD;&#xA;the buttons and game visible. &#xD;&#xA;&#xD;&#xA;From here you will need to use your &#xD;&#xA;knowledge of the Dewey Decimal System &#xD;&#xA;to match the left column with the right &#xD;&#xA;column and vise versa. &#xD;&#xA;&#xD;&#xA;Once you have completed match them &#xD;&#xA;press the &quot;Submit&quot; button to display&#xD;&#xA;your result." HorizontalAlignment="Left" Margin="0,249,0,0" VerticalAlignment="Top" Height="271" FontSize="14" Width="274" Foreground="#DDFFFFFF"/>
+        <Image x:Name="Dude" HorizontalAlignment="Left" Height="78" Margin="829,492,0,0" VerticalAlignment="Top" Width="77"/>
+        <ProgressBar x:Name="BarSort" HorizontalAlignment="Left" Height="16" Margin="284,531,0,0" VerticalAlignment="Top" Width="169"/>
+        <StackPanel/>
+        <Button Content="Start Game with Call Signs" HorizontalAlignment="Left" Margin="26,211,0,0" VerticalAlignment="Top" Click="Button_Click">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF07C0F3" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF272626" Offset="0.041"/>
+                    <GradientStop Color="#FFE02121" Offset="0.635"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
