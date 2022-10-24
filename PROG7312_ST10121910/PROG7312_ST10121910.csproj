@@ -9,11 +9,14 @@
 
   <ItemGroup>
     <None Remove="1000.png" />
+    <None Remove="25.png" />
+    <None Remove="Almost.png" />
     <None Remove="books.png" />
     <None Remove="close.png" />
     <None Remove="Correct.png" />
     <None Remove="Dewey Decial.png" />
     <None Remove="down.png" />
+    <None Remove="halfway.png" />
     <None Remove="match.png" />
     <None Remove="Mix.png" />
     <None Remove="outline_home_white_24dp.png" />
@@ -31,11 +34,14 @@
 
   <ItemGroup>
     <Resource Include="1000.png" />
+    <Resource Include="25.png" />
+    <Resource Include="Almost.png" />
     <Resource Include="books.png" />
     <Resource Include="close.png" />
     <Resource Include="Correct.png" />
     <Resource Include="Dewey Decial.png" />
     <Resource Include="down.png" />
+    <Resource Include="halfway.png" />
     <Resource Include="match.png" />
     <Resource Include="Mix.png" />
     <Resource Include="outline_home_white_24dp.png" />
