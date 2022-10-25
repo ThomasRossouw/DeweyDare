@@ -11,14 +11,16 @@ learn all about it in the a fun and interactive way. Dewey You Trust The Sytem?
 - [Thomas Rossouw](ST10121910@vcconnect.edu.za)
 
 ## Features
+####Version 1
 
 The Sorting Game
 
 - The User is required to out the randomly generated data into the correct order by numerical order.
 
+####Version 2
 Mix and Match
 
-- Coming Soon
+- Prompts the User to match the number to the category.
 
 Knowing your Dewey 
 
@@ -37,7 +39,9 @@ You just need to press the original button.
 
 #### Is there a login?
 
-No, this application doesn't require that feature currently.## Installation
+No, this application doesn't require that feature currently.
+
+## Installation
 
 *Downloading the correct software:
 
@@ -83,7 +87,7 @@ SOFTWARE.
 
 ## Acknowledgements
 
- - [ 100 Number PNG Transparent Image](https://www.pngmart.com/image/210909)
+ - [100 Number PNG Transparent Image](https://www.pngmart.com/image/210909)
  - [Abel Dutra UI](https://www.youtube.com/watch?v=Dwi9o3K73XM&ab_channel=AbelDutraUI)
  - [VectoArt](https://www.youtube.com/watch?v=61UvQ7HXhkA&ab_channel=VectoArt)
  - [C# Ui Academy](https://www.youtube.com/watch?v=jySYq5QJZes&ab_channel=C%23UiAcademy)
@@ -92,3 +96,8 @@ SOFTWARE.
  - [C# Design Pro](https://www.youtube.com/watch?v=8qDCvEgtonc&ab_channel=C%23DesignPro)
  - [Wrong PNG Image](https://www.pngmart.com/image/277705)
  - [Canva](https://www.canva.com/)
+
+## Lessons Learned
+
+Trying to do the hardest or easiest way isn't beneficial at all, it is all up to what you can manage and produce your best. 
+Time isn't always on your side, so always have a backup. There is always a way to improve and better your program.
