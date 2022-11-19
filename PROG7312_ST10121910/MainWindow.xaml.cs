@@ -79,12 +79,12 @@ namespace PROG7312_ST10121910
         //pop up to notify the User that the game is coming soon
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Do you want to play the game of Mix and Match?",
+            if (MessageBox.Show("Do you want to chanllenge yourself to the game of Knowing your Dewey?",
           "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 Knowing know = new Knowing();
                 this.Visibility = Visibility.Hidden;
-                know.Show(); // loads the Mix page 
+                know.Show(); // loads the Quiz page 
             }
             else
             {

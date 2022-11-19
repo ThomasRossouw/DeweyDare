@@ -247,5 +247,12 @@ namespace PROG7312_ST10121910
             this.Visibility = Visibility.Hidden;
             mix.Show();
         }
+
+        private void ButtonQuiz_Click(object sender, RoutedEventArgs e)
+        {
+            Knowing know = new Knowing();
+            this.Visibility = Visibility.Hidden;
+            know.Show(); // loads the Mix page 
+        }
     }
 }
