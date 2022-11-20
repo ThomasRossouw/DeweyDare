@@ -61,5 +61,28 @@
             </Button>
         </StackPanel>
 
+        <ListView Margin="209,150,0,0" Name="ListViewQuiz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="297" Height="197" IsEnabled="false">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+           
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+
+        <Label x:Name="lbQuestionTitle" Content="QUESTION" HorizontalAlignment="Left" Margin="56,88,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" />
+        <Label x:Name="lbQuestion" Content="Label" HorizontalAlignment="Left" Margin="65,112,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" Visibility="Hidden"/>
+        <Label x:Name="lbAnswerTitle" Content="ANSWER OPTIONS" HorizontalAlignment="Left" Margin="56,146,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" />
+        <TextBlock x:Name="tbHowTo" Text="How To Play?" HorizontalAlignment="Left" Margin="715,125,0,0" VerticalAlignment="Top"  FontSize="18" FontFamily="Yu Gothic UI Light" Foreground="White" TextDecorations="Underline" RenderTransformOrigin="0.758,0.533" />
+        <Button   x:Name="btStartQuiz" Content="START QUIZ" HorizontalAlignment="Left" Margin="56,382,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Click="btStartQuiz_Click" />
+        <Button   x:Name="btStartQuizDisabled" Content="NEXT QUESTION" HorizontalAlignment="Left" Margin="56,382,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Click="btStartQuiz_Click" IsEnabled="False" Visibility="Hidden"/>
+        <Button   x:Name="btEndQuiz" Content="END QUIZ" HorizontalAlignment="Left" Margin="253,382,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" Click="btEndQuiz_Click" />
+        <Button   x:Name="btEndQuizDisabled" Content="END QUIZ" HorizontalAlignment="Left" Margin="253,382,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" IsEnabled="False"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="584,174,0,0" TextWrapping="Wrap" FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" VerticalAlignment="Top" Height="383" Width="362"><Run Text="This game is designed to teach you how to find a specific book call number in the dewey decimal classification h"/><Run Text="ier"/><Run Text="archy through a quiz."/><LineBreak/><LineBreak/><Run Text="- To start the game click the START QUIZ button."/><LineBreak/><Run Text="- The current hierarchy level call number options are displayed as a list presented under the ANSWER OPTIONS label. Find the path to the call number displayed under the QUESTION label through DOUBLE CLICKING the correct call number at each hierarchy level."/><LineBreak/><Run Text="- A new hierarchy level is unlocked only if the relative call number is selected for the current hierarchy level."/><LineBreak/><Run Text="- If you select the wrong call number at any level the question will be declared over and full points will not be achieved."/><LineBreak/><Run Text="- To win the game, you must race against the clock to earn 1"/><Run Text="00"/><Run Text=" points with in 5 minutes."/><LineBreak/><Run Text="If time runs out before completing a question you can still complete the question."/><LineBreak/><Run Text="- Each top level hierarchy question answered correct earns you 5 points and finding the call number earns you 10 points for a possible total of 15 points a round."/><LineBreak/><Run Text="- Compete against your PERSONAL BEST or for the CHAMPION position against your fellow library members by achieving the most points during the timed quiz."/></TextBlock>
+        <TextBlock x:Name="tbCurrentScore" Text="0" HorizontalAlignment="Left" Margin="50,506,0,0" VerticalAlignment="Top"  FontSize="16" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.388,-0.812" Visibility="Visible" Width="70"/>
+        <TextBlock x:Name="tbCurrentPoint" Text="POINTS" HorizontalAlignment="Left" Margin="50,433,0,0" VerticalAlignment="Top"  FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" />
+        <Label x:Name="lbNumQTitle" Content="1/2" HorizontalAlignment="Left" Margin="326,150,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" Visibility="Hidden"/>
     </Grid>
+
 </Window>

@@ -10,7 +10,7 @@
 
     <Grid Background="#545454">
 
-        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Source="/TBG (1).png"/>
+        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Source="/TBG (1).png" Margin="24,2,0,0"/>
 
         <StackPanel Orientation="Horizontal" Height="91" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="122" Margin="848,10,0,0">
             <Button x:Name="Close"   BorderBrush="#00707070"    RenderTransformOrigin="0.553,0.507" Height="68" Width="75" Click="Close_Click">
