@@ -1,9 +1,6 @@
-﻿using PROG7312_ST10121910.TreeData;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +11,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PROG7312_ST10121910.Windows;
+using PROG7312_ST10121910.Models;
+using System.Configuration;
+using System.IO;
+using System.Reflection;
+using System.Windows.Threading;
+using System.Threading;
 
 namespace PROG7312_ST10121910
 {
