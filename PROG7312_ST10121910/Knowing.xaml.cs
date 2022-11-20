@@ -22,7 +22,7 @@ namespace PROG7312_ST10121910
     /// </summary>
     public partial class Knowing : Window
     {
-
+        
 
         //Declaration of tree object 
         private Tree<string> tree = new Tree<string>();
@@ -36,12 +36,10 @@ namespace PROG7312_ST10121910
       
         
         private bool gameStarted = false;
-        private bool isChamp { get; set; }
+    
 
 
-        private TimeSpan _time;
-        private int HIERATCHY_LEVEL_ONE_POINTS = 5;
-        private int HIERATCHY_LEVEL_TWO_POINTS = 10;
+     
 
 
 
