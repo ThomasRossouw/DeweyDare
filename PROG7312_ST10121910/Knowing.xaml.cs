@@ -33,8 +33,8 @@ namespace PROG7312_ST10121910
         private int correctSecondLevel;
         private int correctThirdLevel;
 
-        private int currentGameScore = 0;
-        private int currentLevelsCorrect = 0;
+      
+        
         private bool gameStarted = false;
         private bool isChamp { get; set; }
 
@@ -81,9 +81,6 @@ namespace PROG7312_ST10121910
         {
 
             PopulateTreeWithTextFileData();
-
-
-
 
 
         }
@@ -252,7 +249,7 @@ namespace PROG7312_ST10121910
             lbQuestion.Visibility = Visibility.Visible;
             lbNumQTitle.Visibility = Visibility.Visible;
             ListViewQuiz.IsEnabled = true;
-            currentLevelsCorrect = 0;
+           
         }
 
         private void btStartQuiz_Click(object sender, RoutedEventArgs e)
@@ -297,8 +294,7 @@ namespace PROG7312_ST10121910
             btStartQuiz.Content = "Try Again?";
             btEndQuizDisabled.Visibility = Visibility.Visible;
             btStartQuizDisabled.Visibility = Visibility.Hidden;
-            currentGameScore = 0;
-            tbCurrentScore.Text = currentGameScore.ToString();
+   
         }
 
 

@@ -12,6 +12,7 @@
     <None Remove="25.png" />
     <None Remove="Almost.png" />
     <None Remove="books.png" />
+    <None Remove="Call.txt" />
     <None Remove="close.png" />
     <None Remove="Correct.png" />
     <None Remove="Dewey Decial.png" />
@@ -27,6 +28,10 @@
     <None Remove="The art of sorting.png" />
     <None Remove="up.png" />
     <None Remove="wrong.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Call.txt" />
   </ItemGroup>
 
   <ItemGroup>
