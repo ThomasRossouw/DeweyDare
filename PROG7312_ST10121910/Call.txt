@@ -2,9 +2,9 @@
 (2)010 Bibliographies
 (3)014 Bibliographies of anonymous & pseudonymous works
 (3)017 General subject catalogs
-(2)030 Encyclopedias & books of facts
-(3)032 Encyclopedias in English
-(3)037 Encyclopedias in Slavic languages
+(2)030 Encyclopaedias  & books of facts
+(3)032 Encyclopaedias  in English
+(3)037 Encyclopaedias  in Slavic languages
 (2)060 Associations, organizations & museums
 (3)061 Organizations in North America
 (3)069 Museum science
@@ -135,10 +135,10 @@
 (3)846 French letters
 (2)860 Spanish, Portuguese, Galician literatures
 (3)863 Spanish fiction
-(3)867 Spanish humor & satire
+(3)867 Spanish humour  & satire
 (2)870 Latin & Italic literatures
 (3)872 Latin dramatic poetry & drama
-(3)877 Latin humor & satire
+(3)877 Latin humour  & satire
 (2)880 Classical & modern Greek literatures
 (3)883 Classical Greek epic poetry & fiction
 (3)885 Classical Greek speeches
@@ -151,7 +151,7 @@
 (3)938 Greece to 323
 (2)960 History of Africa
 (3)962 Egypt, Sudan, South Sudan
-(3)968 Republic of South Africa & neighboring southern African countries
+(3)968 Republic of South Africa & neighbouring southern African countries
 (2)970 History of North America
 (3)973 United States
 (3)978 Western United States

@@ -28,11 +28,11 @@ namespace PROG7312_ST10121910
     {
      
 
-        //Declaration of tree object 
+        //Declaration of tree  
         private Tree<string> tree = new Tree<string>();
       
 
-        //Declaration of global variables to temporarily store correct question child/parent index numbers for usage in the tree
+        //Declaration of variables to temporarily store for usage in the tree
         private int correctFirstLevel;
         private int correctSecondLevel;
         private int correctThirdLevel;
@@ -54,7 +54,7 @@ namespace PROG7312_ST10121910
         }
 
 
-
+        //Getting Data from the text file
         private List<string> GetDataFromFile(string id)
         {
             List<string> list = new List<string>();
@@ -93,6 +93,8 @@ namespace PROG7312_ST10121910
 
         }
 
+
+        //Populating the tree
         private void PopulateTreeWithTextFileData()
         {
             //Retrieves data from txt file and stores it in list for populating Tree Data Structure
