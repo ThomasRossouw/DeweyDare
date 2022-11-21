@@ -59,7 +59,7 @@
         <Button   x:Name="btStartQuizDisabled" Content="NEXT QUESTION" HorizontalAlignment="Left" Margin="76,495,0,0" VerticalAlignment="Top" Width="150" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Click="btStartQuiz_Click" IsEnabled="False" Visibility="Hidden"/>
         <Button x:Name="btEndQuiz" Content="END QUIZ" HorizontalAlignment="Left" Margin="338,495,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" Click="btEndQuiz_Click" />
 
-        <Button   x:Name="btEndQuizDisabled" Content="END QUIZ" HorizontalAlignment="Left" Margin="338,498,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" IsEnabled="False">
+        <Button   x:Name="btEndQuizDisabled" Content="END QUIZ" HorizontalAlignment="Left" Margin="338,496,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" IsEnabled="False">
 
         </Button>
 
