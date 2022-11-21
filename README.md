@@ -53,11 +53,11 @@ Demo: there is a demo run through of all application functionality and navigatio
 
 
 ## How to Use it?
-Download https://visualstudio.microsoft.com/downloads/
-Install Visual Studio 2022
-Download the zipped project and unzipped once downloaded
-Open the solution file on Visual Studio 2022 (the extention is .sln)
-Run the project and enjoy :)
+- Download https://visualstudio.microsoft.com/downloads/
+- Install Visual Studio 2022
+- Download the zipped project and unzipped once downloaded
+- Open the solution file on Visual Studio 2022 (the extention is .sln)
+- Run the project and enjoy :)
 
 
 ## Installation
