@@ -6,12 +6,15 @@ TBG README
 Not everyone knows what the Dewey Decimal System is, but with the use of TBG students and children can 
 learn all about it in the a fun and interactive way. Dewey You Trust The Sytem?
 
-## Author
+## Author and Developer
 
 - [Thomas Rossouw](ST10121910@vcconnect.edu.za)
 
+
+Access to Github Repo: https://github.com/ThomasRossouw/DeweyDare/tree/POE
+
 ## Features
-####Version 1
+####Version 1 
 
 The Sorting Game
 
@@ -22,9 +25,10 @@ Mix and Match
 
 - Prompts the User to match the number to the category.
 
+####Version 3
 Knowing your Dewey 
 
-- Coming Soon
+- Prompts the User to play and match the answer to the question.
 
 
 ## FAQ
@@ -40,6 +44,21 @@ You just need to press the original button.
 #### Is there a login?
 
 No, this application doesn't require that feature currently.
+
+#### Why can't I play the Know your Dewey?
+
+Did you press the "START QUIZ" button.
+
+Demo: there is a demo run through of all application functionality and navigation included in the documentation.
+
+
+## How to Use it?
+Download https://visualstudio.microsoft.com/downloads/
+Install Visual Studio 2022
+Download the zipped project and unzipped once downloaded
+Open the solution file on Visual Studio 2022 (the extention is .sln)
+Run the project and enjoy :)
+
 
 ## Installation
 
@@ -96,6 +115,9 @@ SOFTWARE.
  - [C# Design Pro](https://www.youtube.com/watch?v=8qDCvEgtonc&ab_channel=C%23DesignPro)
  - [Wrong PNG Image](https://www.pngmart.com/image/277705)
  - [Canva](https://www.canva.com/)
+ - [C-SharpCorner](https://www.c-sharpcorner.com/UploadFile/mahesh/treeview-in-wpf/)
+ - [Quiz Icon](https://fonts.google.com/icons?icon.query=quiz&icon.platform=web&icon.set=Material+Icons)
+ - [Microsoft](https://learn.microsoft.com/en-us/answers/questions/347058/how-to-load-embebbed-resource-image-in-wpf.html)
 
 ## Lessons Learned
 
