@@ -37,17 +37,18 @@ namespace PROG7312_ST10121910
         private int correctSecondLevel;
         private int correctThirdLevel;
 
+        // Varaibles for the game score
         private int currentGameScore=0;
         private int currentLevelsCorrect = 0;
         private bool gameStarted = false;
     
-
+        //Varaibles for the Timer
         private DispatcherTimer _timer;
         private TimeSpan _time;
         private int HIERATCHY_LEVEL_ONE_POINTS = 5;
         private int HIERATCHY_LEVEL_TWO_POINTS = 10;
 
-
+        //Initializing the component 
         public Knowing()
         {
             InitializeComponent();
@@ -82,6 +83,7 @@ namespace PROG7312_ST10121910
             return list;
         }
 
+        // Creating an instance to populate the 
         private void winFindingCallNumbers_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -94,26 +96,26 @@ namespace PROG7312_ST10121910
         }
 
 
-        //Populating the tree
+        //Populating the tree  with the text file content
         private void PopulateTreeWithTextFileData()
         {
-            //Retrieves data from txt file and stores it in list for populating Tree Data Structure
+            //Gets the data from text file and populates it in the tree 
             List<string> FileDataTopLevel = GetDataFromFile("(1)");
             List<string> FileDataSecondLevel = GetDataFromFile("(2)");
             List<string> FileDataThirdLevel = GetDataFromFile("(3)");
 
-            //populating root with description of tree. Other nodes populated from txt file
+            //populating root with description of tree
             tree.Root = new TreeNode<string>() { Data = "Dewey Decimal Classification Tree" };
             tree.Root.Children = new List<TreeNode<string>>();
 
-            //Adding data to Tree from list containing top level call number txt file data
+            //top level call popualted from text file
             foreach (var item in FileDataTopLevel)
             {
                 TreeNode<string> topLevel = new TreeNode<string> { Data = item, Parent = tree.Root };
                 tree.Root.Children.Add(topLevel);
             }
 
-            //Adding data to Tree from list containing second level call number txt file data 
+            //mid level call populated from text file
             int indexEnd = 5;
             int indexStart = 0;
             int childrenFirst = 0;
@@ -133,7 +135,7 @@ namespace PROG7312_ST10121910
 
           
 
-            //Adding data to Tree from list containing third level call number txt file data 
+            //third level call populated from the text file
             indexEnd = 2;
             indexStart = 0;
             childrenFirst = 0;
@@ -163,6 +165,8 @@ namespace PROG7312_ST10121910
 
         }
 
+
+        //displays the thrid level call randomly
         private void DisplayQuestionRandomThirdLevelCallNumber()
         {
             Random rond = new Random();
@@ -174,6 +178,7 @@ namespace PROG7312_ST10121910
 
         }
 
+        //displays the first set of possible answers for the user
         private void DisplayAnswerOptionsFirstLevel()
         {
             lbNumQTitle.Content = "1/2";
@@ -210,6 +215,7 @@ namespace PROG7312_ST10121910
             
         }
         
+        // displays the second set of possible answers for the user
         private void DisplayAnswerOptionsSecondLevel()
         {
             List<string> SortingList = new List<string>();
@@ -249,6 +255,7 @@ namespace PROG7312_ST10121910
            
         }
         
+        //begins to work as the window loads -- loads the buttons and hides buttons 
         public void StartGameComponents()
         {
             btStartQuiz.Content = "NEXT QUESTION";
@@ -262,6 +269,7 @@ namespace PROG7312_ST10121910
             currentLevelsCorrect = 0;
         }
 
+        //the start quiz button componants 
         private void btStartQuiz_Click(object sender, RoutedEventArgs e)
         {
             StartGameComponents();
@@ -282,6 +290,7 @@ namespace PROG7312_ST10121910
           
         }
 
+        //the second set of possible answers
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             var item = sender as ListViewItem;
@@ -348,6 +357,7 @@ namespace PROG7312_ST10121910
             }
         }
 
+        // the end quiz button with popups and end of game
         private void btEndQuiz_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you certain you are wanting to end your current game? All your points will be lost.", "End Current Quiz?", System.Windows.MessageBoxButton.YesNo);
@@ -360,6 +370,7 @@ namespace PROG7312_ST10121910
             }
         }
 
+        //Game result from points and time limits of completion
         private void DetermineGameResult()
         {
             _timer.Stop();
@@ -382,6 +393,8 @@ namespace PROG7312_ST10121910
 
        
         }
+
+        //Reset the game when Try again is pressed by the User
         private void ResetGameComponents()
         {
             ListViewQuiz.Items.Clear();
@@ -394,10 +407,11 @@ namespace PROG7312_ST10121910
             tbCurrentScore.Text = currentGameScore.ToString();
         }
 
+        //The countdown begins with 3 minutes to complete and get to 100 points
         private void StartCountDown()
         {
             
-            _time = TimeSpan.FromMinutes(5);
+            _time = TimeSpan.FromMinutes(3);
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
@@ -412,14 +426,7 @@ namespace PROG7312_ST10121910
            
         }
 
- 
-
- 
-
-
-
-
-
+        //The action to reload the Quiz Game
         private void ButtonQuiz_Click(object sender, RoutedEventArgs e)
         {
             Knowing know = new Knowing();
@@ -458,13 +465,6 @@ namespace PROG7312_ST10121910
 
             this.Close(); // closes the program for the user 
         }
-    }
-
-
-
-
-
-
-       
+    }     
     }
 

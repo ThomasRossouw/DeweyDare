@@ -65,7 +65,7 @@ namespace PROG7312_ST10121910
         //Dictionary
         IDictionary<string, string> DeweyDictionary = new Dictionary<string, string>();
 
-
+        // Game begins when the start button is pressed
         private void StartGame_Click(object sender, RoutedEventArgs e)
         {
 
