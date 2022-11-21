@@ -30,7 +30,7 @@ namespace PROG7312_ST10121910
 
         //Declaration of tree object 
         private Tree<string> tree = new Tree<string>();
-        private List<Leaderboard> getAllRecords = new List<Leaderboard>();
+      
 
         //Declaration of global variables to temporarily store correct question child/parent index numbers for usage in the tree
         private int correctFirstLevel;
@@ -40,7 +40,7 @@ namespace PROG7312_ST10121910
         private int currentGameScore=0;
         private int currentLevelsCorrect = 0;
         private bool gameStarted = false;
-        private bool isChamp { get; set; }
+    
 
         private DispatcherTimer _timer;
         private TimeSpan _time;
@@ -163,10 +163,10 @@ namespace PROG7312_ST10121910
 
         private void DisplayQuestionRandomThirdLevelCallNumber()
         {
-            Random rnd = new Random();
-            correctFirstLevel = rnd.Next(0, 9); 
-            correctSecondLevel = rnd.Next(0, 4);   
-            correctThirdLevel = rnd.Next(0,1);     
+            Random rond = new Random();
+            correctFirstLevel = rond.Next(0, 9); 
+            correctSecondLevel = rond.Next(0, 4);   
+            correctThirdLevel = rond.Next(0,1);     
 
             lbQuestion.Content = tree.Root.Children[correctFirstLevel].Children[correctSecondLevel].Children[correctThirdLevel].Data.Substring(4);
 
@@ -176,7 +176,7 @@ namespace PROG7312_ST10121910
         {
             lbNumQTitle.Content = "1/2";
 
-            Random rnd = new Random();
+            Random rond = new Random();
             int i = 0;
 
             List<string> listForSorting = new List<string>();
@@ -185,7 +185,7 @@ namespace PROG7312_ST10121910
 
             while(i<=2)
             {
-                int rndfirstLevel = rnd.Next(0, 9);
+                int rndfirstLevel = rond.Next(0, 9);
                 if (listForSorting.Contains(tree.Root.Children[rndfirstLevel].Data) || tree.Root.Children[rndfirstLevel].Data.Equals(tree.Root.Children[correctFirstLevel].Data))
                 {
                    
@@ -210,7 +210,7 @@ namespace PROG7312_ST10121910
         
         private void DisplayAnswerOptionsSecondLevel()
         {
-            List<string> listForSorting = new List<string>();
+            List<string> SortingList = new List<string>();
 
             if (ListViewQuiz.Items.GetItemAt(ListViewQuiz.SelectedIndex).ToString().Equals(tree.Root.Children[correctFirstLevel].Data))
             {
@@ -219,26 +219,26 @@ namespace PROG7312_ST10121910
                 Random rnd = new Random();
                 int i = 0;
 
-                listForSorting.Add(tree.Root.Children[correctFirstLevel].Children[correctSecondLevel].Data);
+                SortingList.Add(tree.Root.Children[correctFirstLevel].Children[correctSecondLevel].Data);
 
                 while (i <= 2)
                 {
                     int rndSecondLevel = rnd.Next(0, 5);
-                    if (listForSorting.Contains(tree.Root.Children[correctFirstLevel].Children[rndSecondLevel].Data) || tree.Root.Children[correctFirstLevel].Children[rndSecondLevel].Data.Equals(tree.Root.Children[correctFirstLevel].Children[correctSecondLevel].Data))
+                    if (SortingList.Contains(tree.Root.Children[correctFirstLevel].Children[rndSecondLevel].Data) || tree.Root.Children[correctFirstLevel].Children[rndSecondLevel].Data.Equals(tree.Root.Children[correctFirstLevel].Children[correctSecondLevel].Data))
                     {
 
                     }
                     else
                     {
-                        listForSorting.Add(tree.Root.Children[correctFirstLevel].Children[rndSecondLevel].Data);
+                        SortingList.Add(tree.Root.Children[correctFirstLevel].Children[rndSecondLevel].Data);
                         i++;
                     }
 
                 }
 
-                listForSorting.Sort();
+                SortingList.Sort();
 
-                foreach (var item in listForSorting)
+                foreach (var item in SortingList)
                 {
                     ListViewQuiz.Items.Add(item);
                 }
@@ -296,7 +296,7 @@ namespace PROG7312_ST10121910
                 }
                 else if (ListViewQuiz.Items.GetItemAt(ListViewQuiz.SelectedIndex).ToString().Equals(tree.Root.Children[correctFirstLevel].Children[correctSecondLevel].Data))
                 {
-                    MessageBox.Show("You found the call number and got all DDC hierarchy levels correct! Click NEXT QUESTION to start the next question or END QUIZ to end the current game. ", "Congratulations! :D");
+                    MessageBox.Show("You got the correct matching set. Click NEXT QUESTION to start the next question or END QUIZ to end the current game. ", "Congratulations! :D");
                     ListViewQuiz.Items.Clear();
                     lbQuestion.Content = "";
                     currentGameScore += HIERATCHY_LEVEL_TWO_POINTS;
@@ -319,8 +319,8 @@ namespace PROG7312_ST10121910
                 }
                 else
                 {
-                    MessageBox.Show("Sorry, you selected the wrong call number. You got " + currentLevelsCorrect + " DDC hierarchy levels correct during that question."
-                        +"Click NEXT QUESTION to start the next question or END QUIZ to end the current game.","Question Over :(");
+                    MessageBox.Show("Unfortunately, your selected set is incorrect."
+                        +"Click NEXT QUESTION to start the next question or END QUIZ to end the current game.","Game Over :(");
                     currentLevelsCorrect = 0;
                     if (tbTimeDisplay.Text.Equals("00:00:00"))
                     {
@@ -348,7 +348,7 @@ namespace PROG7312_ST10121910
 
         private void btEndQuiz_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure you want to end the current game? If you did not achieve enough points the game will be lost", "End Current Quiz?", System.Windows.MessageBoxButton.YesNo);
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you certain you are wanting to end your current game? All your points will be lost.", "End Current Quiz?", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
 
@@ -366,13 +366,13 @@ namespace PROG7312_ST10121910
 
             if (currentGameScore < 100)
             {
-                MessageBox.Show("Unfortunately you did not achieve enough points in that round to win the game. Better luck next time ! You scored " + currentGameScore + " points that round.", "You Lose :(");
+                MessageBox.Show("Unfortunately the points weren't enough to win. You scored " + currentGameScore + " points that round.", "Better Luck next time :(");
 
 
             }
             else
             {
-                MessageBox.Show("Congratulations you won the game ! You scored " + currentGameScore + " points that round. Try again to keep practicing or to better your score or the score of the CHAMPION", "You Win! :D");
+                MessageBox.Show("Congratulations! You scored " + currentGameScore + " points that round. ", "You Win! :D");
 
 
             }

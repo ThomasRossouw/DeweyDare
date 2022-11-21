@@ -8,6 +8,9 @@
         Height="600" Width="1000"
      Title="Knowing" WindowStartupLocation="CenterScreen"  Loaded="winFindingCallNumbers_Loaded">
     <Grid Background="#545454">
+
+        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Source="/TBG (1).png" Margin="24,2,0,0"/>
+
         <StackPanel Orientation="Horizontal" Height="72" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Width="432">
             <Button  MinWidth="100" Margin="10,5,0,0" BorderBrush="#00707070" Click="ButtonHome_Click" Width="69" Height="73"  >
                 <Button.Background>
@@ -38,7 +41,7 @@
 
             </Button>
         </StackPanel>
-        <ListView Margin="56,180,0,0" Name="ListViewQuiz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="297" Height="197" IsEnabled="false">
+        <ListView Margin="140,300,0,0" Name="ListViewQuiz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="168" IsEnabled="false">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
@@ -46,29 +49,25 @@
             </ListView.ItemContainerStyle>
         </ListView>
 
-        <Label x:Name="lbQuestionTitle" Content="QUESTION" HorizontalAlignment="Left" Margin="56,88,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" />
-        <Label x:Name="lbQuestion" Content="Label" HorizontalAlignment="Left" Margin="65,112,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" Visibility="Hidden"/>
-        <Label x:Name="lbAnswerTitle" Content="ANSWER OPTIONS" HorizontalAlignment="Left" Margin="56,146,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" />
+        <Label x:Name="lbQuestionTitle" Content="QUESTION:" HorizontalAlignment="Left" Margin="56,170,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" />
+        <Label x:Name="lbQuestion" Content="Label" HorizontalAlignment="Left" Margin="56,200,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" Visibility="Hidden"/>
+        <Label x:Name="lbAnswerTitle" Content="POSSIBLE ANSWER:" HorizontalAlignment="Left" Margin="56,250,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" />
         <TextBlock x:Name="tbHowTo" Text="How To Play?" HorizontalAlignment="Left" Margin="715,135,0,0" VerticalAlignment="Top"  FontSize="18" FontFamily="Yu Gothic UI Light" Foreground="White" TextDecorations="Underline" RenderTransformOrigin="0.758,0.533" />
-        <Button   x:Name="btStartQuiz" Content="START QUIZ" HorizontalAlignment="Left" Margin="56,382,0,0" VerticalAlignment="Top" Width="129" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Click="btStartQuiz_Click" />
-        <Button   x:Name="btStartQuizDisabled" Content="NEXT QUESTION" HorizontalAlignment="Left" Margin="56,382,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Click="btStartQuiz_Click" IsEnabled="False" Visibility="Hidden"/>
-        <Button x:Name="btEndQuiz" Content="END QUIZ" HorizontalAlignment="Left" Margin="253,382,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" Click="btEndQuiz_Click" />
-        <Button   x:Name="btEndQuizDisabled" Content="END QUIZ" HorizontalAlignment="Left" Margin="253,382,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" IsEnabled="False"/>
+        <Button   x:Name="btStartQuiz" Content="START QUIZ" HorizontalAlignment="Left" Margin="76,495,0,0" VerticalAlignment="Top" Width="150" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Click="btStartQuiz_Click" >
 
-        <TextBlock HorizontalAlignment="Left" Margin="599,180,0,0" TextWrapping="Wrap" FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" VerticalAlignment="Top" Height="383" Width="362"><Run Text="This game is designed to teach you how to find a specific book call number in the dewey decimal classification h"/><Run Text="ier"/><Run Text="archy through a quiz."/><LineBreak/><LineBreak/><Run Text="- To start the game click the START QUIZ button."/><LineBreak/><Run Text="- The current hierarchy level call number options are displayed as a list presented under the ANSWER OPTIONS label. Find the path to the call number displayed under the QUESTION label through DOUBLE CLICKING the correct call number at each hierarchy level."/><LineBreak/><Run Text="- A new hierarchy level is unlocked only if the relative call number is selected for the current hierarchy level."/><LineBreak/><Run Text="- If you select the wrong call number at any level the question will be declared over and full points will not be achieved."/><LineBreak/><Run Text="- To win the game, you must race against the clock to earn 1"/><Run Text="00"/><Run Text=" points with in 5 minutes."/><LineBreak/><Run Text="If time runs out before completing a question you can still complete the question."/><LineBreak/><Run Text="- Each top level hierarchy question answered correct earns you 5 points and finding the call number earns you 10 points for a possible total of 15 points a round."/><LineBreak/><Run Text="- Compete against your PERSONAL BEST or for the CHAMPION position against your fellow library members by achieving the most points during the timed quiz."/></TextBlock>
-        <TextBlock x:Name="tbCurrentScore" Text="0" HorizontalAlignment="Left" Margin="50,506,0,0" VerticalAlignment="Top"  FontSize="16" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.388,-0.812" Visibility="Visible" Width="70"/>
-        <Image x:Name="imgStop" Height="44" Margin="35,457,672,0" VerticalAlignment="Top"  RenderTransformOrigin="0.986,0.469"/>
-        <TextBlock x:Name="tbCurrentPoint" Text="POINTS" HorizontalAlignment="Left" Margin="50,433,0,0" VerticalAlignment="Top"  FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" />
-        <Label x:Name="lbNumQTitle" Content="1/2" HorizontalAlignment="Left" Margin="326,150,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" Visibility="Hidden"/>
-        <TextBlock x:Name="tbTimeDisplay" Text="00:00:00" HorizontalAlignment="Left" Margin="125,505,0,0" VerticalAlignment="Top"  FontSize="16" FontFamily="Yu Gothic UI Light" Foreground="White" />
-        <Image x:Name="imgStop_Copy" Height="44" Margin="110,457,597,0" VerticalAlignment="Top"  RenderTransformOrigin="0.986,0.469"/>
-        <TextBlock x:Name="tbRoundTimer" Text="ROUND TIMER" HorizontalAlignment="Left" Margin="110,433,0,0" VerticalAlignment="Top"  FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" />
-        <TextBlock x:Name="tbPBSCore" Text="0" HorizontalAlignment="Left" Margin="202,506,0,0" VerticalAlignment="Top"  FontSize="16" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.388,-0.812" Visibility="Visible" Width="83"/>
-        <Image x:Name="imgPB" HorizontalAlignment="Left" Height="44" Margin="216,458,0,0" VerticalAlignment="Top" Width="81"  RenderTransformOrigin="0.83,0.585"/>
-        <TextBlock x:Name="tbPersonalBest" Text="PERSONAL BEST" HorizontalAlignment="Left" Margin="202,433,0,0" VerticalAlignment="Top"  FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" />
-        <TextBlock x:Name="tbChampion" Text="CHAMPION" HorizontalAlignment="Left" Margin="300,433,0,0" VerticalAlignment="Top"  FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="0.883,0.439" />
-        <Image x:Name="imgChamp" HorizontalAlignment="Left" Height="44" Margin="312,459,0,0" VerticalAlignment="Top" Width="81"  RenderTransformOrigin="0.83,0.585"/>
-        <TextBlock x:Name="tbChampScore" Text="0" HorizontalAlignment="Left" Margin="311,505,0,0" VerticalAlignment="Top"  FontSize="16" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.388,-0.812" Visibility="Visible" Width="93"/>
-        <TextBlock x:Name="tbChampionName" Text="" HorizontalAlignment="Left" Margin="300,526,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="Gold"  />
+        </Button>
+        <Button   x:Name="btStartQuizDisabled" Content="NEXT QUESTION" HorizontalAlignment="Left" Margin="76,495,0,0" VerticalAlignment="Top" Width="150" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Click="btStartQuiz_Click" IsEnabled="False" Visibility="Hidden"/>
+        <Button x:Name="btEndQuiz" Content="END QUIZ" HorizontalAlignment="Left" Margin="338,495,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" Click="btEndQuiz_Click" />
+
+        <Button   x:Name="btEndQuizDisabled" Content="END QUIZ" HorizontalAlignment="Left" Margin="338,498,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="16" FontFamily="Yu Gothic UI Light" RenderTransformOrigin="0.14,0.475" Visibility="Visible" IsEnabled="False">
+
+        </Button>
+
+        <TextBlock HorizontalAlignment="Left" Margin="602,183,0,0" TextWrapping="Wrap" FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" VerticalAlignment="Top" Height="383" Width="362"><Run Text="Begin by pressing &quot;Start Quiz&quot;. Once you have done so the game will "/><LineBreak/><Run Text="commence."/><LineBreak/><Run/><LineBreak/><Run Text="Look at the space under 'QUESTION'  for the question that requires you to use the listbox under 'POSSIBLE ANSWER' to try and get the correct answer."/><LineBreak/><Run/><LineBreak/><Run Text="To register your answer you are required to double click to lock in your "/><LineBreak/><Run Text="answer. Depending on if your answer is correct or incorrect a popup will"/><LineBreak/><Run Text="appear."/><LineBreak/><Run/><LineBreak/><Run Text="If you have the correct answer, you will be prompted to press &quot;NEXT QUESTION&quot; button to proceed to the next stage."/><LineBreak/><Run/><LineBreak/><Run Text="To register your answer you are required to double click to lock in your "/><LineBreak/><Run Text="answer. Depending on if your answer is correct or incorrect a popup will"/><LineBreak/><Run Text="appear."/><LineBreak/><Run/><LineBreak/><Run Text="You may continue to play till you get the answer wrong and it'll reset your points."/><LineBreak/><Run/><LineBreak/><Run Text="It's a race against the clock to get those points."/></TextBlock>
+        <TextBlock x:Name="tbCurrentScore" Text="0" HorizontalAlignment="Left" Margin="303,129,0,0" VerticalAlignment="Top"  FontSize="16" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.388,-0.812" Visibility="Visible" Width="70"/>
+        <TextBlock x:Name="tbCurrentPoint" Text="POINTS" HorizontalAlignment="Left" Margin="292,94,0,0" VerticalAlignment="Top"  FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" />
+        <Label x:Name="lbNumQTitle" Content="ROUND: 1/2" HorizontalAlignment="Left" Margin="326,250,0,0" VerticalAlignment="Top"  FontSize="14" FontFamily="Yu Gothic UI Light" Foreground="White" RenderTransformOrigin="1.905,1.759" Visibility="Hidden"/>
+        <TextBlock x:Name="tbTimeDisplay" Text="00:00:00" HorizontalAlignment="Left" Margin="381,125,0,0" VerticalAlignment="Top"  FontSize="16" FontFamily="Yu Gothic UI Light" Foreground="White" />
+        <TextBlock x:Name="tbRoundTimer" Text="ROUND TIMER" HorizontalAlignment="Left" Margin="372,94,0,0" VerticalAlignment="Top"  FontSize="12" FontFamily="Yu Gothic UI Light" Foreground="White" />
     </Grid>
 </Window>
