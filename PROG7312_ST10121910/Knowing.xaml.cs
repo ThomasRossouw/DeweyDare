@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 using PROG7312_ST10121910.Models;
 using System.Configuration;
 using System.IO;
@@ -27,29 +26,32 @@ namespace PROG7312_ST10121910
     /// </summary>
     public partial class Knowing : Window
     {
-        
+     
 
         //Declaration of tree object 
         private Tree<string> tree = new Tree<string>();
-
+        private List<Leaderboard> getAllRecords = new List<Leaderboard>();
 
         //Declaration of global variables to temporarily store correct question child/parent index numbers for usage in the tree
         private int correctFirstLevel;
         private int correctSecondLevel;
         private int correctThirdLevel;
 
-      
-        
+        private int currentGameScore=0;
+        private int currentLevelsCorrect = 0;
         private bool gameStarted = false;
-    
+        private bool isChamp { get; set; }
+
+        private DispatcherTimer _timer;
+        private TimeSpan _time;
+        private int HIERATCHY_LEVEL_ONE_POINTS = 5;
+        private int HIERATCHY_LEVEL_TWO_POINTS = 10;
 
 
-     
-
-
-
-
-
+        public Knowing()
+        {
+            InitializeComponent();
+        }
 
 
 
@@ -84,6 +86,9 @@ namespace PROG7312_ST10121910
         {
 
             PopulateTreeWithTextFileData();
+           
+
+
 
 
         }
@@ -124,7 +129,7 @@ namespace PROG7312_ST10121910
                 childrenFirst++;
             }
 
-
+          
 
             //Adding data to Tree from list containing third level call number txt file data 
             indexEnd = 2;
@@ -152,16 +157,16 @@ namespace PROG7312_ST10121910
                 childrenFirst++;
             }
 
-
+           
 
         }
 
         private void DisplayQuestionRandomThirdLevelCallNumber()
         {
             Random rnd = new Random();
-            correctFirstLevel = rnd.Next(0, 9);
-            correctSecondLevel = rnd.Next(0, 4);
-            correctThirdLevel = rnd.Next(0, 1);
+            correctFirstLevel = rnd.Next(0, 9); 
+            correctSecondLevel = rnd.Next(0, 4);   
+            correctThirdLevel = rnd.Next(0,1);     
 
             lbQuestion.Content = tree.Root.Children[correctFirstLevel].Children[correctSecondLevel].Children[correctThirdLevel].Data.Substring(4);
 
@@ -178,19 +183,19 @@ namespace PROG7312_ST10121910
 
             listForSorting.Add(tree.Root.Children[correctFirstLevel].Data);
 
-            while (i <= 2)
+            while(i<=2)
             {
                 int rndfirstLevel = rnd.Next(0, 9);
                 if (listForSorting.Contains(tree.Root.Children[rndfirstLevel].Data) || tree.Root.Children[rndfirstLevel].Data.Equals(tree.Root.Children[correctFirstLevel].Data))
                 {
-
+                   
                 }
                 else
                 {
                     listForSorting.Add(tree.Root.Children[rndfirstLevel].Data);
                     i++;
                 }
-
+               
             }
 
             listForSorting.Sort();
@@ -200,9 +205,9 @@ namespace PROG7312_ST10121910
                 ListViewQuiz.Items.Add(item);
             }
 
-
+            
         }
-
+        
         private void DisplayAnswerOptionsSecondLevel()
         {
             List<string> listForSorting = new List<string>();
@@ -238,10 +243,10 @@ namespace PROG7312_ST10121910
                     ListViewQuiz.Items.Add(item);
                 }
             }
-
-
+        
+           
         }
-
+        
         public void StartGameComponents()
         {
             btStartQuiz.Content = "NEXT QUESTION";
@@ -252,7 +257,7 @@ namespace PROG7312_ST10121910
             lbQuestion.Visibility = Visibility.Visible;
             lbNumQTitle.Visibility = Visibility.Visible;
             ListViewQuiz.IsEnabled = true;
-           
+            currentLevelsCorrect = 0;
         }
 
         private void btStartQuiz_Click(object sender, RoutedEventArgs e)
@@ -262,20 +267,84 @@ namespace PROG7312_ST10121910
             if (gameStarted == false)
             {
                 gameStarted = true;
-
+                StartCountDown();
             }
+         
 
+            
+                DisplayQuestionRandomThirdLevelCallNumber();
 
+                DisplayAnswerOptionsFirstLevel();
+           
 
-            DisplayQuestionRandomThirdLevelCallNumber();
-
-            DisplayAnswerOptionsFirstLevel();
-
-
-
+          
         }
 
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var item = sender as ListViewItem;
+            if (item != null && item.IsSelected)
+            {
+                if (ListViewQuiz.Items.GetItemAt(ListViewQuiz.SelectedIndex).ToString().Equals(tree.Root.Children[correctFirstLevel].Data))
+                {
+                    DisplayAnswerOptionsSecondLevel();
+                    currentGameScore += HIERATCHY_LEVEL_ONE_POINTS;
+                    currentLevelsCorrect++;
+                    lbNumQTitle.Content = "2/2";
+                 
+                  
+                }
+                else if (ListViewQuiz.Items.GetItemAt(ListViewQuiz.SelectedIndex).ToString().Equals(tree.Root.Children[correctFirstLevel].Children[correctSecondLevel].Data))
+                {
+                    MessageBox.Show("You found the call number and got all DDC hierarchy levels correct! Click NEXT QUESTION to start the next question or END QUIZ to end the current game. ", "Congratulations! :D");
+                    ListViewQuiz.Items.Clear();
+                    lbQuestion.Content = "";
+                    currentGameScore += HIERATCHY_LEVEL_TWO_POINTS;
+                    currentLevelsCorrect++;
 
+
+                    if (tbTimeDisplay.Text.Equals("00:00:00"))
+                    {
+                        DetermineGameResult();
+                        ResetGameComponents();
+                    }
+                    else
+                    {
+                        btStartQuizDisabled.Visibility = Visibility.Hidden;
+                        lbNumQTitle.Visibility = Visibility.Hidden;
+                        ListViewQuiz.IsEnabled = false;
+                    }
+                   
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Sorry, you selected the wrong call number. You got " + currentLevelsCorrect + " DDC hierarchy levels correct during that question."
+                        +"Click NEXT QUESTION to start the next question or END QUIZ to end the current game.","Question Over :(");
+                    currentLevelsCorrect = 0;
+                    if (tbTimeDisplay.Text.Equals("00:00:00"))
+                    {
+                        DetermineGameResult();
+                        ResetGameComponents();
+                    }
+                    else
+                    {
+                        btStartQuizDisabled.Visibility = Visibility.Hidden;
+                        lbNumQTitle.Visibility = Visibility.Hidden;
+                        ListViewQuiz.IsEnabled = false;
+                    }
+                }
+
+                if (currentGameScore >= 100)
+                {
+                    DetermineGameResult();
+                    ResetGameComponents();
+                }
+                tbCurrentScore.Text = currentGameScore.ToString();
+             
+
+            }
+        }
 
         private void btEndQuiz_Click(object sender, RoutedEventArgs e)
         {
@@ -283,12 +352,34 @@ namespace PROG7312_ST10121910
             if (messageBoxResult == MessageBoxResult.Yes)
             {
 
+                DetermineGameResult();
                 ResetGameComponents();
 
             }
         }
 
+        private void DetermineGameResult()
+        {
+            _timer.Stop();
+            tbTimeDisplay.Text = "00:00:00";
+            tbCurrentScore.Text = currentGameScore.ToString();
 
+            if (currentGameScore < 100)
+            {
+                MessageBox.Show("Unfortunately you did not achieve enough points in that round to win the game. Better luck next time ! You scored " + currentGameScore + " points that round.", "You Lose :(");
+
+
+            }
+            else
+            {
+                MessageBox.Show("Congratulations you won the game ! You scored " + currentGameScore + " points that round. Try again to keep practicing or to better your score or the score of the CHAMPION", "You Win! :D");
+
+
+            }
+            gameStarted = false;
+
+       
+        }
         private void ResetGameComponents()
         {
             ListViewQuiz.Items.Clear();
@@ -297,8 +388,33 @@ namespace PROG7312_ST10121910
             btStartQuiz.Content = "Try Again?";
             btEndQuizDisabled.Visibility = Visibility.Visible;
             btStartQuizDisabled.Visibility = Visibility.Hidden;
-   
+            currentGameScore = 0;
+            tbCurrentScore.Text = currentGameScore.ToString();
         }
+
+        private void StartCountDown()
+        {
+            
+            _time = TimeSpan.FromMinutes(5);
+
+            _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                tbTimeDisplay.Text = _time.ToString("c");
+                if (_time == TimeSpan.Zero) _timer.Stop();
+                _time = _time.Add(TimeSpan.FromSeconds(-1));
+            }, Application.Current.Dispatcher);
+
+            _timer.Start();
+            
+
+           
+        }
+
+ 
+
+ 
+
+
 
 
 
